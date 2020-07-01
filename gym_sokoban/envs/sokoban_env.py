@@ -207,7 +207,7 @@ class SokobanEnv(gym.Env):
 
     def reset(self, second_player=False, render_mode='rgb_array', regenerate=False):
         try:
-            if self.initialized == False and regenerate == False:
+            if self.initialized == False or regenerate == True:
                 self.room_fixed, self.room_state, self.box_mapping = generate_room(
                     dim=self.dim_room,
                     num_steps=self.num_gen_steps,
